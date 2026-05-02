@@ -10,8 +10,8 @@
       --bg:        #F4F1EC;
       --bg2:       #EDE9E2;
       --ink:       #1E1C19;
-      --muted:     #6B6560;
-      --faint:     #A09890;
+      --muted:     #4A4642;   /* darkened from #6B6560 */
+      --faint:     #7A7470;   /* darkened from #A09890 */
       --accent:    #4A6FA5;
       --accent2:   #B07040;
       --card:      #EAE6DF;
@@ -201,8 +201,6 @@
       letter-spacing: -.01em;
       color: var(--ink);
     }
-
-    /* Sub-heading for sections within a section */
     .sub-heading {
       font-family: var(--serif);
       font-size: clamp(1.3rem, 3vw, 1.7rem);
@@ -220,7 +218,7 @@
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--border);
       display: grid;
-      grid-template-columns: 40px 1fr;
+      grid-template-columns: 80px 1fr;
       gap: 1.75rem;
       align-items: start;
     }
@@ -242,8 +240,6 @@
     .pub-meta strong { color: var(--ink); font-weight: 400; }
     .pub-links { margin-top: .4rem; display: flex; gap: 1.2rem; }
     .pub-links a { font-size: .76rem; letter-spacing: .04em; }
-
-    /* upcoming work — slightly muted to distinguish from published */
     .pub-item.upcoming .pub-title { color: var(--muted); }
     .pub-item.upcoming .pub-year { font-style: italic; }
 
@@ -275,7 +271,37 @@
       font-weight: 300;
       margin-bottom: .75rem;
     }
-    .contact-aside p { font-size: .9rem; color: var(--muted); line-height: 1.9; }
+    .contact-aside p { font-size: .9rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.75rem; }
+
+    /* Social icons */
+    .social-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      margin-top: .25rem;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--muted);
+      text-decoration: none;
+      transition: all .2s var(--ease);
+    }
+    .social-links a:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+      background: var(--card);
+    }
+    .social-links svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
 
     form { display: flex; flex-direction: column; gap: 1.1rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -409,7 +435,6 @@
     <div class="section-rule"></div>
   </div>
 
-  <!-- SUBSECTION: Selected Work -->
   <h2 class="sub-heading">Publications</h2>
   <div class="pub-list">
     <div class="pub-item">
@@ -440,33 +465,28 @@
       <div class="pub-year">2022</div>
       <div>
         <div class="pub-title">Shedding light on avoided disasters: Measuring the invisible benefits of disaster risk management using probabilistic counterfactual analysis</div>
-        <div class="pub-meta">Rabonza M., Lallemant D., Lin Y.C., Tadepalli S., Wagenaar D., Nguyen M., <strong>Choong J.</strong>, Liu, C.J.N, Sarica, G.M, Widawati, B.A.M., Balbi, M., Khan, F., Loos, S., Lim, T.N. &nbsp;·&nbsp; <em>UNDRR Global Assessment Report 2022</em></div>
+        <div class="pub-meta">Rabonza M., Lallemant D., Lin Y.C., Tadepalli S., Wagenaar D., Nguyen M., <strong>Choong J.</strong>, Liu C.J.N., Sarica G.M., Widawati B.A.M., Balbi M., Khan F., Loos S., Lim T.N. &nbsp;·&nbsp; <em>UNDRR Global Assessment Report 2022</em></div>
         <div class="pub-links"><a href="https://dr.ntu.edu.sg/entities/publication/21b5abe1-0708-456f-af15-3fd64afbcf78" target="_blank">Read paper</a></div>
       </div>
     </div>
   </div>
 
-  <!-- SUBSECTION: Upcoming Work -->
   <h2 class="sub-heading" style="margin-top: 4rem;">Upcoming work</h2>
   <div class="pub-list">
-
-    <!-- EDIT: fill in your working titles and co-authors -->
     <div class="pub-item upcoming">
       <div class="pub-year">Under review</div>
       <div>
         <div class="pub-title">Investigating equity-sensitive disaster risk modelling approaches: A comparative guide for practice</div>
-        <div class="pub-meta"><strong>Choong J.</strong>, Cremen, G., Lallemant, D. &nbsp;·&nbsp; <em>International Journal of Disaster Risk Reduction</em></div>
+        <div class="pub-meta"><strong>Choong J.</strong>, Cremen G., Lallemant D. &nbsp;·&nbsp; <em>International Journal of Disaster Risk Reduction</em></div>
       </div>
     </div>
-
     <div class="pub-item upcoming">
-      <div class="pub-year">in prep</div>
+      <div class="pub-year">In prep</div>
       <div>
-        <div class="pub-title">From risk model to policy: a sensitive analysis for equitable well-being risk reduction</div>
-        <div class="pub-meta"><strong>Choong J.</strong> and Lallemant, D. &nbsp;·&nbsp;</div>
+        <div class="pub-title">From risk model to policy: a sensitivity analysis for equitable well-being risk reduction</div>
+        <div class="pub-meta"><strong>Choong J.</strong>, Lallemant D.</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -482,7 +502,7 @@
       <div class="cv-date">Aug 2021 – present</div>
       <div>
         <div class="cv-role">PhD Candidate</div>
-        <div class="cv-place">Asian School of the Environment & Earth Observatory of Singapore ·  Nanyang Technological University</div>
+        <div class="cv-place">Asian School of the Environment &amp; Earth Observatory of Singapore · Nanyang Technological University</div>
         <div class="cv-desc">My PhD research investigates disaster risk modelling approaches that account for inequity. Underlying inequalities in society mean that the same hazard can have vastly different impacts on different population groups — and so it matters how risk is measured and modelled.</div>
       </div>
     </div>
@@ -563,6 +583,31 @@
     <div class="contact-aside">
       <h3>Get in touch.</h3>
       <p>Whether you're interested in collaboration or have a question about my research — I'd love to hear from you.</p>
+      <!-- Social icons -->
+      <div class="social-links">
+
+        <!-- Google Scholar -->
+        <a href="https://scholar.google.com/citations?user=zjryvt8AAAAJ&hl=en" target="_blank" title="Google Scholar">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/jeancjw" target="_blank" title="LinkedIn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="https://x.com/JeanetteChoong" target="_blank" title="X (Twitter)">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+          </svg>
+        </a>
+
+      </div>
     </div>
     <div>
       <form id="contact-form" action="https://formspree.io/f/mykoyqww" method="POST">
@@ -584,11 +629,6 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-copy">© <span id="year"></span> Jeanette Choong</span>
-  <div class="footer-links">
-    <a href="https://scholar.google.com/citations?user=zjryvt8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-    <a href="https://www.linkedin.com/in/jeancjw" target="_blank">LinkedIn</a>
-    <a href="https://x.com/JeanetteChoong" target="_blank">X</a>
-  </div>
 </footer>
 
 <script>
