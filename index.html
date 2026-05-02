@@ -6,22 +6,14 @@
   <title>Jeanette Choong</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-
-    /* ─────────────────────────────────────────────
-       TOKENS
-       Palette: warm stone bg · deep charcoal ink
-       Accents: dusty slate blue + warm amber
-       CVD-safe: no red/green meaning distinction
-       All text passes WCAG AA contrast
-    ───────────────────────────────────────────── */
     :root {
       --bg:        #F4F1EC;
       --bg2:       #EDE9E2;
       --ink:       #1E1C19;
       --muted:     #6B6560;
       --faint:     #A09890;
-      --accent:    #4A6FA5;   /* slate blue — CVD safe */
-      --accent2:   #B07040;   /* warm amber — CVD safe with blue */
+      --accent:    #4A6FA5;
+      --accent2:   #B07040;
       --card:      #EAE6DF;
       --border:    #D4CFC7;
       --serif:     'Cormorant Garamond', Georgia, serif;
@@ -44,7 +36,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Subtle grain */
     body::after {
       content: '';
       position: fixed;
@@ -56,7 +47,6 @@
       background-size: 256px;
     }
 
-    /* Links always underlined — CVD: colour never sole indicator */
     a {
       color: var(--accent);
       text-decoration: underline;
@@ -141,6 +131,7 @@
       margin-bottom: 2.25rem;
       line-height: 1.9;
     }
+    .hero-bio p + p { margin-top: 1rem; }
     .hero-links { display: flex; flex-wrap: wrap; gap: .75rem; }
 
     .btn {
@@ -281,7 +272,7 @@
     .cv-list { display: flex; flex-direction: column; }
     .cv-item {
       display: grid;
-      grid-template-columns: 130px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 2rem;
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--border);
@@ -372,7 +363,6 @@
     }
     .footer-links a:hover { color: var(--ink); }
 
-    /* ANIMATIONS — slow & graceful */
     @keyframes rise {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -383,7 +373,6 @@
     .hero-links   { animation: rise .9s .48s var(--ease) both; }
     .hero-photo   { animation: rise 1s .28s var(--ease) both; }
 
-    /* RESPONSIVE */
     @media (max-width: 640px) {
       .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem 3rem; gap: 2.5rem; }
       .hero-photo { width: 100%; height: 200px; }
@@ -405,9 +394,11 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">Jeanette Choong</a>
     <ul class="nav-links">
-      <li><a href="#research">Research</a></li>
+      <!-- Research nav link commented out while section is hidden -->
+      <!-- <li><a href="#research">Research</a></li> -->
       <li><a href="#publications">Publications</a></li>
       <li><a href="#cv">CV</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -417,12 +408,12 @@
 <div class="hero">
   <div class="hero-text">
     <p class="hero-eyebrow">PhD Candidate &nbsp;·&nbsp; Disaster Analytics for Society Lab</p>
-    <h1>Hello, I'm Jeanette 👋<br></h1>
-    <p class="hero-bio">
-      I'm currently a PhD candidate at the Asian School of the Environment (ASE) and Earth Observatory of Singapore at the Nanyang Technological University. 
+    <h1>Hello, I'm Jeanette 👋</h1>
+    <div class="hero-bio">
+      <p>I'm a PhD candidate at the Asian School of the Environment (ASE) and Earth Observatory of Singapore at the Nanyang Technological University. 
       My research challenges conventional approaches of risk analysis and explores alternative risk modelling approaches that account for inequity in disaster risk settings.
-      Prior to my PhD, I was a Research Associate at the <a href="disaster-analytics.com">Disaster Analytics for Society Lab</a> at ASE, NTU, and have worked in both government and non-governmental organisations.
-    </p>
+      Prior to my PhD, I was a Research Associate at the <a href="https://disaster-analytics.com">Disaster Analytics for Society Lab</a> at ASE, NTU, and have worked in both government and non-governmental organisations.</p>
+    </div>
     <div class="hero-links">
       <a href="#contact" class="btn btn-primary">Get in touch</a>
       <a href="#publications" class="btn btn-outline">Publications</a>
@@ -430,40 +421,37 @@
     </div>
   </div>
   <div class="hero-photo">
-   <img src="jeanette_corporatepic.jpg" alt="Jeanette">
+    <img src="jeanette_corporatepic.jpg" alt="Jeanette Choong">
   </div>
 </div>
 
-<!-- RESEARCH -->
+<!-- RESEARCH — hidden for now, uncomment when ready -->
 <!--
-  <section id="research">
+<section id="research">
   <div class="section-header">
     <span class="section-label">Research</span>
     <div class="section-rule"></div>
   </div>
   <h2>What I currently work on</h2>
   <div class="research-grid">
-    <!-- EDIT: duplicate or remove cards as needed -->
     <div class="research-card">
       <span class="tag">(In)equity in Disaster Risk</span>
       <h3>Equity-sensitive risk modelling approaches</h3>
-      <p>Disasters impact people in different ways, but current risk metrics mainly reflect asset damages. Asset losses alone bias policy and resource planning outcomes to those who own higher value assets, 
-        obscuring the critical needs of vulnerable groups in society. I investigate risk models that account for various axes of inequity, including income, gender, age, and access to essential services. </p>
+      <p>Disasters impact people in different ways, but current risk metrics mainly reflect asset damages. Asset losses alone bias policy and resource planning outcomes to those who own higher value assets, obscuring the critical needs of vulnerable groups in society. I investigate risk models that account for various axes of inequity, including income, gender, age, and access to essential services.</p>
     </div>
     <div class="research-card">
       <span class="tag">Policy-oriented</span>
-      <h3>Informing equitable policy & planning outcomes</h3>
+      <h3>Informing equitable policy &amp; planning outcomes</h3>
       <p>How do we translate various risk modelling outputs into actionable policy? In this project, I bridge the model-policy disconnect by systematically comparing different risk modelling approaches in terms of their data inputs, theoretical concepts, output metrics and the types of policies they can or cannot inform.</p>
     </div>
     <div class="research-card">
       <span class="tag">Future research</span>
       <h3>Procedural and recognition equity</h3>
-      <p>Risk models alone cannot adequately represent local needs, ongoing resilience efforts, and other context-specific considerations such as power dynamics, gender and cultural norms that may predispose communities and individuals to greater risk. Much more needs to be done to involve local communities in risk reduction efforts. 
-      "Nobody is more interested in reducing disaster risk than the community whose survival and well-being is at stake." (Gaillard & Maceda, 2009, p.109)</p>
+      <p>Risk models alone cannot adequately represent local needs, ongoing resilience efforts, and other context-specific considerations such as power dynamics, gender and cultural norms that may predispose communities and individuals to greater risk. Much more needs to be done to involve local communities in risk reduction efforts.</p>
     </div>
   </div>
-</section> 
-  -->
+</section>
+-->
 
 <!-- PUBLICATIONS -->
 <section id="publications">
@@ -473,29 +461,36 @@
   </div>
   <h2>Selected work</h2>
   <div class="pub-list">
-    <!-- EDIT: duplicate or remove items as needed -->
     <div class="pub-item">
       <div class="pub-year">2025</div>
       <div>
         <div class="pub-title">Shared hazards, unequal outcomes: Income-driven inequities in disaster risk</div>
-        <div class="pub-meta"><strong>Choong J.J.</strong>, Wagenaar,D., Rabonza, M.L., Hamel, P., Switzer, A.D., Lallemant, D., 2025&nbsp;·&nbsp; <em>Shared hazards, unequal outcomes: income-driven inequities in disaster risk. npj Nat. Hazards 2, 33. https://doi.org/10.1038/s44304-025-00087-2</em></div>
-        <div class="pub-links"><a href="https://www.nature.com/articles/s44304-025-00087-2">READ HERE</a></div>
+        <div class="pub-meta"><strong>Choong J.J.</strong>, Wagenaar, D., Rabonza M.L., Hamel P., Switzer A.D., Lallemant D. &nbsp;·&nbsp; <em>npj Natural Hazards</em></div>
+        <div class="pub-links"><a href="https://www.nature.com/articles/s44304-025-00087-2" target="_blank">Read paper</a></div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">Keeping it Fair: How to Account for Inequity in Climate and Disaster Risk Analyses</div>
+        <div class="pub-meta">Giardino, A., <strong>Choong, J., </strong>, Lallemant, D., Wagenaar, Soden, R. &nbsp;·&nbsp;<em>Asian Development Bank Blog</em></div>
+        <div class="pub-links"><a href="https://blogs.adb.org/blog/keeping-it-fair-how-account-inequity-climate-and-disaster-risk-analyses" target="_blank">Read post</a></div>
       </div>
     </div>
     <div class="pub-item">
       <div class="pub-year">2024</div>
       <div>
         <div class="pub-title">Flow-tub model: A modified bathtub flood model with hydraulic connectivity and path-based attenuation</div>
-        <div class="pub-meta">Kasmalkar, I., Wagenaar, D., Bill-Weilandt, A., <strong>Choong, J.</strong>, Manimaran, S., Lim, T.N., Rabonza, M., Lallemant, D., 2025.&nbsp;·&nbsp; <em>Flow-tub model: A modified bathtub flood model with hydraulic connectivity and path-based attenuation. MethodsX 12, 102524. https://doi.org/10.1016/j.mex.2023.102524 </em></div>
-        <div class="pub-links"><a href="https://www.sciencedirect.com/science/article/pii/S2215016123005204">READ HERE</a></div>
+        <div class="pub-meta">Kasmalkar I., Wagenaar D., Bill-Weilandt A., <strong>Choong J.</strong>, Manimaran S., Lim T.N., Rabonza M., Lallemant D. &nbsp;·&nbsp; <em>MethodsX</em></div>
+        <div class="pub-links"><a href="https://www.sciencedirect.com/science/article/pii/S2215016123005204" target="_blank">Read paper</a></div>
       </div>
     </div>
     <div class="pub-item">
       <div class="pub-year">2022</div>
       <div>
-        <div class="pub-title">Shedding light on avoided disasters: Measuring the invisible benefits of disaster risk management using probabilistic counterfactual analysis.</div>
-        <div class="pub-meta"> Rabonza, M., Lallemant, D., Lin, Y.C., Tadepalli, S., Wagenaar, D., Nguyen, M., <strong>Choong, J.</strong>, Liu, C.J.N., Sarica, G.M., Widawati, B.A.M. and Balbi, M., 2022.&nbsp;·&nbsp; <em>Shedding light on avoided disasters: Measuring the invisible benefits of disaster risk management using probabilistic counterfactual analysis. UNDRR Global Assessment Report 2022.</em></div>
-        <div class="pub-links"><a href="https://dr.ntu.edu.sg/entities/publication/21b5abe1-0708-456f-af15-3fd64afbcf78">READ HERE</a></div>
+        <div class="pub-title">Shedding light on avoided disasters: Measuring the invisible benefits of disaster risk management using probabilistic counterfactual analysis</div>
+        <div class="pub-meta">Rabonza M., Lallemant D., Lin Y.C., Tadepalli S., Wagenaar D., Nguyen M., <strong>Choong J.</strong>, et al. &nbsp;·&nbsp; <em>UNDRR Global Assessment Report 2022</em></div>
+        <div class="pub-links"><a href="https://dr.ntu.edu.sg/entities/publication/21b5abe1-0708-456f-af15-3fd64afbcf78" target="_blank">Read paper</a></div>
       </div>
     </div>
   </div>
@@ -504,41 +499,87 @@
 <!-- CV -->
 <section id="cv">
   <div class="section-header">
-    <span class="section-label">Experience</span>
+    <span class="section-label">CV</span>
     <div class="section-rule"></div>
   </div>
-  <h2>Background</h2>
+  <h2>Work Experience</h2>
   <div class="cv-list">
-    <!-- EDIT: duplicate or remove items as needed -->
     <div class="cv-item">
       <div class="cv-date">Aug 2021 – present</div>
       <div>
         <div class="cv-role">PhD Candidate</div>
         <div class="cv-place">Asian School of the Environment · Nanyang Technological University</div>
-        <div class="cv-desc"> My PhD research focuses on investigating disaster risk modelling approaches that account for issues of inequity. Underlying inequalities in society mean that the same hazard can have vastly different impacts on different population groups, and so it matters how risk is measured or modelled. Risk metrics that account for such differential risks better inform policy and resource allocation decisions.</div>
+        <div class="cv-desc">My PhD research investigates disaster risk modelling approaches that account for inequity. Underlying inequalities in society mean that the same hazard can have vastly different impacts on different population groups — and so it matters how risk is measured and modelled.</div>
       </div>
     </div>
     <div class="cv-item">
-      <div class="cv-date">Nov 2020 - Aug 2021</div>
+      <div class="cv-date">Nov 2020 – Aug 2021</div>
       <div>
         <div class="cv-role">Research Associate</div>
         <div class="cv-place">Disaster Analytics for Society Lab · Asian School of the Environment, NTU</div>
       </div>
     </div>
     <div class="cv-item">
-      <div class="cv-date">Jan 2017 - Aug 2019</div>
+      <div class="cv-date">Jan 2017 – Aug 2019</div>
       <div>
         <div class="cv-role">Assistant Manager, Geospatial Modelling</div>
         <div class="cv-place">Ministry of Defence Singapore</div>
       </div>
     </div>
-     <div class="cv-item">
-      <div class="cv-date">Apr 2014 - Nov 2016</div>
+    <div class="cv-item">
+      <div class="cv-date">Apr 2014 – Nov 2016</div>
       <div>
-        <div class="cv-role">Executive, Environmental Outreach & Programmes</div>
+        <div class="cv-role">Executive, Environmental Outreach &amp; Programmes</div>
         <div class="cv-place">Singapore Environment Council</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header">
+    <span class="section-label">Education</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2>Education</h2>
+  <div class="cv-list">
+
+    <div class="cv-item">
+      <div class="cv-date">2021 – present </div>
+      <div>
+        <div class="cv-role">PhD Candidate</div>
+        <div class="cv-place">Asian School of the Environment & Earth Observatory of Singapore, Nanyang Technological University</div>
+        <div class="cv-desc">Thesis: <em>Equity in disaster risk analysis: Methods, metrics and policy implications</em><br>
+        Supervisor: Associate Professor David Lallemant, Disaster Analytics for Society Lab</div>
+      </div>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-date">2019 – 2020</div>
+      <div>
+        <div class="cv-role">MSc Urban Science, Policy &amp; Planning</div>
+        <div class="cv-place">Nanyang Technological University</div>
+        <div class="cv-desc">
+          Research Project: <em>Motivations &amp; Interests of Different Stakeholders in the Private Home-sharing Market: A case study of Airbnb Singapore</em><br>
+          Winner of the Three-minute Thesis Audience Award
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-date">2010 – 2013</div>
+      <div>
+        <div class="cv-role">BSc (Hons) Environmental Studies </div>
+        <div class="cv-place">The University of Manchester</div>
+        <div class="cv-desc">
+          Graduated with first class honours <br>
+          Final Year Project: <em>Urban UV Exposure &amp; the Effects on Human Health</em><br>
+          Co-founder &amp; Publicity Officer of the Manchester Environmental Sustainability Society (Awarded Best Society in 2011/2012)
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -550,19 +591,9 @@
   </div>
   <div class="contact-wrap">
     <div class="contact-aside">
-      <h3>Get connected:</h3>
-      <p>
-        Whether you're interested in collaboration, have a question about my research — I'd love to hear from you.
-      </p>
+      <h3>Get in touch.</h3>
+      <p>Whether you're interested in collaboration or have a question about my research — I'd love to hear from you.</p>
     </div>
-    <!--
-      HOW THE CONTACT FORM WORKS (no email exposed):
-      Uses Formspree — free at formspree.io
-      1. Sign up at formspree.io
-      2. Create a new form to get your unique ID
-      3. Replace YOUR_FORMSPREE_ID below
-      Your email stays completely private.
-    -->
     <div>
       <form id="contact-form" action="https://formspree.io/f/mykoyqww" method="POST">
         <div class="form-row">
@@ -575,17 +606,17 @@
         <button type="submit" class="btn btn-primary form-submit">Send message</button>
         <p class="form-note">Your email is only used to reply to you and is never displayed publicly.</p>
       </form>
-      <div id="form-success">Thank you for contacting me - I'll be in touch soon.</div>
+      <div id="form-success">Thank you for reaching out — I'll be in touch soon.</div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-copy">© <span id="year"></span> Your Name</span>
+  <span class="footer-copy">© <span id="year"></span> Jeanette Choong</span>
   <div class="footer-links">
     <a href="https://scholar.google.com/citations?user=zjryvt8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-    <a href="https://linkedin.com/jeanchw" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/jeancjw" target="_blank">LinkedIn</a>
     <a href="https://x.com/JeanetteChoong" target="_blank">X</a>
   </div>
 </footer>
@@ -610,7 +641,6 @@
     }
   });
 
-  // Gentle scroll-reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
